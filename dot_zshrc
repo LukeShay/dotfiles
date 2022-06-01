@@ -63,6 +63,15 @@ setup_coursier() {
   export PATH="$PATH:${HOME}/Library/Application Support/Coursier/bin"
 }
 
+setup_pnpm() {
+  export PNPM_HOME="/Users/lshay/Library/pnpm"
+  export PATH="$PNPM_HOME:$PATH"
+}
+
+setup_starship() {
+  eval "$(starship init zsh)"
+}
+
 export PATH="/usr/local/sbin:${PATH}"
 export TERM=xterm-256color
 
@@ -77,7 +86,8 @@ use_envrc
 use_asdf
 setup_rust
 setup_coursier
+setup_pnpm
+setup_starship
 
 alias cd="cd_enhanced"
 
-eval "$(starship init zsh)"
