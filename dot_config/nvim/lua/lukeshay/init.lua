@@ -5,7 +5,8 @@ else
 	print("Failed to load impatient.")
 end
 
-require('lukeshay.set')
+require('lukeshay.utils')
+require('lukeshay.general')
 require('lukeshay.packer')
 
 --[[

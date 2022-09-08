@@ -50,6 +50,42 @@ packer.startup(function()
 
 	use({ "sheerun/vim-polyglot" })
 
+	use({ "nvim-lua/plenary.nvim" })
+
+	use({
+		"nvim-telescope/telescope.nvim",
+		config = function()
+			require("lukeshay.plugins.telescope")
+		end,
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "make",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+	use({
+		"nvim-telescope/telescope-symbols.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+	use({
+		"nvim-telescope/telescope-github.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+	use({
+		"LinArcX/telescope-env.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+
 	if PACKER_BOOTSTRAP then
 		packer.sync()
 	end
