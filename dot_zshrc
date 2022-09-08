@@ -1,6 +1,6 @@
 # Oh my ZSH setup
 
-on_my_zsh() {
+setup_on_my_zsh() {
   export ZSH="${HOME}/.oh-my-zsh"
   ZSH_THEME="lssimple"
   plugins=(
@@ -10,15 +10,15 @@ on_my_zsh() {
   source $ZSH/oh-my-zsh.sh
 }
 
-aliases() {
-  source "${HOME}/.bash_aliases"
+setup_aliases() {
+  source "${HOME}/.zsh_aliases"
 }
 
-secrets() {
-  source "${HOME}/.bash_secrets"
+setup_secrets() {
+  source "${HOME}/.zsh_secrets"
 }
 
-completions() {  
+setup_completions() {  
   if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   fi
@@ -31,15 +31,12 @@ completions() {
   autoload -U +X bashcompinit && bashcompinit
 }
 
-editor() {
-  # === Editor Setup ===
-  export EDITOR="vim"
-  export VIMINIT="source ${HOME}/.vimrc"
+setup_editor() {
+  export EDITOR="nvim"
 }
 
 setup_asdf() {
   . "$(brew --prefix asdf)/libexec/asdf.sh"
-  . "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
 
   # required for nodejs install to work
   export NODEJS_CHECK_SIGNATURES=no
@@ -72,14 +69,24 @@ setup_starship() {
   eval "$(starship init zsh)"
 }
 
+setup_bun() {
+  # bun completions
+  [ -s "/Users/lshay/.bun/_bun" ] && source "/Users/lshay/.bun/_bun"
+
+  # Bun
+  export BUN_INSTALL="/Users/lshay/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+}
+
 export PATH="/usr/local/sbin:${PATH}"
 export TERM=xterm-256color
+export XDG_DATA_HOME="${HOME}/.config"
 
-on_my_zsh
-secrets
-aliases
-completions
-editor
+setup_on_my_zsh
+setup_secrets
+setup_aliases
+setup_completions
+setup_editor
 setup_asdf
 setup_deno
 use_envrc
@@ -88,6 +95,7 @@ setup_rust
 setup_coursier
 setup_pnpm
 setup_starship
+setup_bun
 
 alias cd="cd_enhanced"
 
