@@ -1,4 +1,4 @@
-KeyBind.g({
+Keybind.g({
 	{
     "n",
     "<Leader>ff",
