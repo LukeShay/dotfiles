@@ -40,3 +40,7 @@ use_asdf() {
 
 alias le="load_env"
 alias tf='terraform'
+
+# === Directory Aliases ===
+alias dev="cd ${HOME}/Developer"
+alias ff="cd ${HOME}/Developer/friendfetcher"

@@ -46,6 +46,13 @@ packer.startup(function()
 	-- speed uploading lua modules
 	use({ "lewis6991/impatient.nvim" })
 
+	use({
+		"arcticicestudio/nord-vim",
+		config = function()
+			require("lukeshay.plugins.nord-vim")
+		end,
+	})
+
 	use({ "wellle/context.vim" })
 
 	use({ "sheerun/vim-polyglot" })
@@ -84,6 +91,20 @@ packer.startup(function()
 		requires = {
 			"nvim-telescope/telescope.nvim",
 		},
+	})
+
+	use({
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("lukeshay.plugins.lualine-nvim")
+		end,
+	})
+
+	use({ 
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("lukeshay.plugins.nvim-lspconfig")
+		end,
 	})
 
 	if PACKER_BOOTSTRAP then
