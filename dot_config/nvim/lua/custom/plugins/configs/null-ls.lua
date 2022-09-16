@@ -10,7 +10,9 @@ local sources = {
 
    -- webdev stuff
    b.formatting.deno_fmt,
-   b.formatting.prettier,
+   b.formatting.prettierd,
+   b.diagnostics.eslint_d,
+   b.diagnostics.tsc,
 
    -- Lua
    b.formatting.stylua,
@@ -19,7 +21,9 @@ local sources = {
    b.formatting.shfmt,
    b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 
-  b.formatting.rustfmt,
+   b.formatting.black,
+
+   b.formatting.rustfmt,
 }
 
 null_ls.setup {
