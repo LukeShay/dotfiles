@@ -44,3 +44,10 @@ alias tf='terraform'
 # === Directory Aliases ===
 alias dev="cd ${HOME}/Developer"
 alias ff="cd ${HOME}/Developer/friendfetcher"
+
+# === Editor Aliases ===
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+alias nvm="nvim"
+alias nvmi="nvim"
