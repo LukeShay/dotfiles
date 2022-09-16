@@ -44,4 +44,10 @@ asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add python
 asdf plugin-add terraform
 
+mkdir -p "${HOME}/.warp"
+
+cd "${HOME}/.warp"
+
+git clone https://github.com/warpdotdev/themes.git
+
 cd "${PWD}"
