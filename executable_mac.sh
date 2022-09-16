@@ -32,7 +32,7 @@ brew install \
   zsh-completions \
   chezmoi
 
-brew install --cask font-fira-code
+brew install --cask font-fira-code font-fira-code-nerd-font
 
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
