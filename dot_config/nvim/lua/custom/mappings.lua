@@ -1,3 +1,5 @@
+local cmp = require("cmp")
+
 local M = {}
 
 M.general = {
@@ -7,6 +9,13 @@ M.general = {
 
   i = {
     ["jk"] = { "<ESC>", "escape vim" },
+    ["<Tab>"] = function(fallback)
+         if cmp.visible() then
+            cmp.select_next_item()
+         else
+            fallback()
+         end
+      end,
   },
 }
 
